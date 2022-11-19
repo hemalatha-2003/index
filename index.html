@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/72d58b68e6.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.list-type{
+			list-style:none;
+		}
+		.listitem{
+			font-size: 3rem;
+			
+		}
+		.body{
+			border: 1px solid darkred;
+			text-align: center;
+			margin: 3%;
+			margin-top: 5%;
+			background-color: red;
+			background-image: url(https://cdn.pixabay.com/photo/2013/07/21/13/00/rose-165819__340.jpg);
+		}
+	</style>
+	<script type="text/javascript">
+		function todo(){
+			let NewTodo=document.getElementById("newtodo").value
+			//console.log(NewTodo)
+			document.getElementById("newtodo").value=""
+			addTodo(NewTodo)
+		}
+		function addTodo(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			console.log(li)
+			li.innerHTML=`
+			<span class="listitem">${newValue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>
+			`
+			ul.appendChild(li)
+
+		}
+	</script>
+</head>
+<body>
+		<input type="text" value="" id="newtodo" placeholder="enter a todo"/>
+		<ul>
+		</ul>
+		<button onclick="todo()">submit</button>  
+</body>
+</html>
